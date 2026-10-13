@@ -103,3 +103,82 @@ dialog>button{position:absolute;top:.5rem;right:.5rem;z-index:3;background:#000a
 /* showreel button (only appears once SHOWREEL is set in app.js) */
 .go .reel{display:inline-block;padding:.55rem 1.3rem;border-radius:99px;background:var(--ac);color:#0b1020;font:800 1rem var(--hd);cursor:pointer}
 .go .reel:hover,.go .reel:focus-visible{filter:brightness(1.1);outline:3px solid var(--fg);outline-offset:3px}
+
+/* ===== PHONE LAYOUT (desktop is untouched: everything below only applies on screens 700px wide or less) ===== */
+html{-webkit-text-size-adjust:100%}
+@media(max-width:700px){
+body{font-size:1rem;line-height:1.55}
+
+/* nav: one slim swipeable row instead of wrapping onto several lines */
+nav{flex-wrap:nowrap;overflow-x:auto;gap:1.2rem;padding:.8rem 1rem;font-size:.9rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;white-space:nowrap;padding:.45rem 0}
+nav a:first-child{margin-right:.4rem;font-size:1rem}
+.panel{padding-top:3.6rem;padding-bottom:env(safe-area-inset-bottom)}
+
+/* type and spacing */
+main{padding:0 1rem 4rem}
+h1{font-size:clamp(2.6rem,15vw,4.2rem)}
+h2{font-size:1.45rem}
+.lede{font-size:1.08rem}
+.hero{padding:1.5rem 0 .5rem}
+.sec{margin-top:2.8rem;padding-top:1.4rem}
+.sec p{margin-bottom:1.2rem}
+.sec:not(.fold)+.fold{margin-top:2rem}
+.fold summary{padding:1rem 0;gap:.6rem}
+.fold summary span{font-size:.85rem}
+
+/* two videos per row instead of one huge one */
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem .8rem}
+.music .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.big{grid-column:1/-1}
+.card b{font-size:.95rem;margin:.6rem 0 .15rem}
+.card small{font-size:.82rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+/* the featured film keeps its full width, bigger title and full text */
+.big b{font-size:1.4rem;margin-top:.8rem}
+.big small{font-size:.95rem;-webkit-line-clamp:unset;display:block}
+.card:hover .th{transform:none;box-shadow:none}
+
+/* no hover on a phone, so the play button is always faintly visible */
+.th:after{opacity:.85;width:2.4rem;height:2.4rem}
+.big .th:after{width:3.2rem;height:3.2rem}
+.music .th{width:88%;box-shadow:0 0 0 .3rem #000,0 0 0 .38rem #3a2a55;animation-duration:20s}
+.music .card:hover .th{box-shadow:0 0 0 .3rem #000,0 0 0 .38rem #3a2a55}
+.bars{height:60px;gap:4px}.bars i{flex-basis:8px}
+
+/* shorts film-gate hero a bit slimmer */
+.shorts .hero{border-block-width:.6rem;padding:1.8rem 1rem 1.4rem;margin:0 -1rem}
+.shorts .hero:before,.shorts .hero:after{height:.6rem}
+.shorts .hero:before{top:-.6rem}.shorts .hero:after{bottom:-.6rem}
+
+/* commercial chips */
+.chips span{font-size:.9rem;padding:.3rem .75rem}
+
+/* acting call sheet */
+.acting main{margin:.5rem .6rem 2rem;padding:1rem .9rem 1.5rem}
+.acting h1{font-size:clamp(2.2rem,12vw,3.4rem)}
+.acting h2{margin-top:1.8rem}
+.row{font-size:.92rem;gap:.4rem}
+.row:after{min-width:.8rem}
+
+/* about + contact */
+.contact{padding:1.1rem 1.2rem;font-size:1rem;line-height:1.9;overflow-wrap:anywhere}
+.contact a{display:inline-block;padding:.1rem 0}
+
+/* home buttons: bigger tap targets */
+.home{padding:1rem 1.2rem}
+.home h1{font-size:clamp(3rem,17vw,5rem)}
+.go{gap:.5rem;margin-top:1.6rem}
+.go a,.go .reel{padding:.7rem 1.1rem}
+
+/* video popup fills the screen width */
+dialog{width:100vw;max-width:100vw;max-height:100dvh;border-radius:0}
+.cap{padding:.8rem 1rem 1.2rem;font-size:.95rem}
+dialog>button{padding:.5rem .9rem}
+}
+
+/* very small phones */
+@media(max-width:380px){
+.grid,.music .grid{gap:1.2rem .6rem}
+.card b{font-size:.88rem}
+}
