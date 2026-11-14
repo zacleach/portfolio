@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zac Leach, shooter-editor in London</title>
+<meta name="description" content="Zac Leach is a shooter-editor and colourist in London, filming live music, video podcasts and brand work on 1.33x anamorphic lenses. Available for bookings.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zac Leach, shooter-editor in London">
+<meta property="og:description" content="Live music, video podcasts and brand work, shot on 1.33x anamorphic lenses. Available for bookings.">
+<meta property="og:url" content="https://zacleach.github.io/portfolio/">
+<meta property="og:image" content="https://zacleach.github.io/portfolio/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zac Leach, with an anamorphic lens flare across the name">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zacleach.github.io/portfolio/og-image.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar">
+  <a class="mark" href="#top"></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Sections"></nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <div class="flare hero-flare" aria-hidden="true"></div>
+    <h1 class="name" data-lens="hero"></h1>
+    <div class="hero-foot">
+      <p class="hero-pitch"></p>
+      <div class="hero-side">
+        <p class="hero-detail"></p>
+        <div class="hero-cta">
+          <a class="btn btn-light" id="hero-mail"></a>
+          <button class="btn btn-ghost" type="button" id="hero-reel" hidden>Watch showreel</button>
+          <span class="avail"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="reels"></div>
+
+  <section class="work" id="work">
+    <header class="reel-head">
+      <h2 data-lens></h2>
+      <p></p>
+    </header>
+    <ul class="services"></ul>
+    <div class="work-cta"><a class="btn btn-dark" id="work-mail"></a></div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="flare about-flare" aria-hidden="true"></div>
+    <h2 data-lens></h2>
+    <div class="about-grid">
+      <div class="about-text"></div>
+      <address class="contact"></address>
+    </div>
+  </section>
+</main>
+
+<dialog id="player" aria-labelledby="p-title">
+  <div class="p-top">
+    <h2 id="p-title"></h2>
+    <button class="p-close" type="button">Close</button>
+  </div>
+  <div class="p-stage"><div class="flare p-flare" aria-hidden="true"></div><div class="p-vid"></div></div>
+  <div class="p-meta">
+    <ol class="p-parts"></ol>
+    <p class="p-desc"></p>
+    <a class="p-yt" target="_blank" rel="noopener">Watch on YouTube</a>
+  </div>
+</dialog>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
